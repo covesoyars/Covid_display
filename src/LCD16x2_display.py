@@ -26,6 +26,7 @@ for data in CovidDisplay().read():
 
 		lcd.message = column
 		lcd.clear()
+		print(column)
 
 
 
