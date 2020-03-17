@@ -3,6 +3,7 @@ from CovidDisplayScraper import CovidDisplay
 import board
 import digitalio
 import adafruit_character_lcd.character_lcd as characterlcd
+from time import sleep
 
 """Displays COVID-19 stats on LCD 16x2 screen"""
 
@@ -27,6 +28,7 @@ for data in CovidDisplay().read():
 	for column in data:		# for each country, for now:
 
 		lcd.message = column
+		sleep(5)
 		lcd.clear()
 		print(column)
 
