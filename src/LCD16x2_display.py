@@ -27,7 +27,6 @@ for data in CovidDisplay().read():
 	for column in data:		# for each country, for now:
 
 		lcd.message = column
-		lcd.display()
 		lcd.clear()
 		print(column)
 
