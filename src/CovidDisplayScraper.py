@@ -36,8 +36,8 @@ class CovidDisplay(object):
 	def __init__(self):
 
 		self.columns_dict = {
-								'world_wide': self.STATS_DICT1,
-								'USA': self.STATS_DICT1,
+								'world_wide': self.STATS_DICT1.copy(),
+								'USA': self.STATS_DICT1.copy(),
 							}
 
 		self.colums_aux_dict = {
@@ -74,12 +74,16 @@ class CovidDisplay(object):
 		:return:
 		"""
 		while True:
+			try:
+				for column in self.colums_aux_dict:
+					self.colums_aux_dict[column]['func'](column)
 
-			for column in self.colums_aux_dict:
-				self.colums_aux_dict[column]['func'](column)
+				yield self.columns_dict
+				sleep(interval)
+			except:
 
-			yield self.columns_dict
-			sleep(interval)
+				yield self.columns_dict
+				sleep(interval)
 
 
 
