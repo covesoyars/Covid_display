@@ -21,7 +21,11 @@ lcd_d7 = digitalio.DigitalInOut(board.D18)
 lcd = characterlcd.Character_LCD_Mono(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
 									  lcd_d7, lcd_columns, lcd_rows)
 
+SHORT_HAND_COLUMNS = {'Coronavirus Cases':'CASES',
+					  'Deaths': 'DEAD',
+					  'Recovered': 'REC\'D'
 
+						}
 
 for data in CovidDisplay().read():
 
@@ -29,7 +33,7 @@ for data in CovidDisplay().read():
 
 		for header in data[column]:
 
-			lcd.message = column + " " + header
+			lcd.message = SHORT_HAND_COLUMNS[column] + " " + header + data[column][header]
 			sleep(5)
 			lcd.clear()
 
