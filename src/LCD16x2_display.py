@@ -27,10 +27,11 @@ for data in CovidDisplay().read():
 
 	for column in data:		# for each country, for now:
 
-		lcd.message = column
-		sleep(5)
-		lcd.clear()
-		print(column)
+		for header in data[column]:
+
+			lcd.message = column + " " + header
+			sleep(5)
+			lcd.clear()
 
 
 
