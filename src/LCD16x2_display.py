@@ -33,7 +33,7 @@ for data in CovidDisplay().read():
 
 		for header in data[column]:
 
-			lcd.message = SHORT_HAND_COLUMNS[column] + " " + header + data[column][header]
+			lcd.message = column + " " + SHORT_HAND_COLUMNS[header] + data[column][header]
 			sleep(5)
 			lcd.clear()
 
