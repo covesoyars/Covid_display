@@ -30,14 +30,15 @@ class CovidDisplay(object):
 		'USA': {'func': self.scrape_usa, 'url':'https://www.worldometers.info/coronavirus/country/us/'}
 	}
 	"""
-	STATS_DICT1 = {'Coronavirus Cases': 0, 'Deaths': 0, 'Recovered': 0} # the 1 implies that multiple different column
-																# configurations can be added by adding more constants
+	STATS_DICT1 = {'Coronavirus Cases': 0, 'Deaths': 0, 'Recovered': 0}
+	STATS_DICT_VA = {'Tested': 0, 'Cases': 0, 'Deaths':0}
 
 	def __init__(self):
 
 		self.columns_dict = {
 								'world_wide': self.STATS_DICT1.copy(),
 								'USA': self.STATS_DICT1.copy(),
+								'VA': self.STATS_DICT_VA.copy()
 							}
 
 		self.colums_aux_dict = {
@@ -48,7 +49,13 @@ class CovidDisplay(object):
 									'USA': {
 											'func': self.world_meters_scrape,
 											'url': 'https://www.worldometers.info/coronavirus/country/us/'}
-											}
+							   },
+								# 	'VA': {
+								# 			'func': None,
+								# 			'url': 'http://www.vdh.virginia.gov/coronavirus/'}
+								# }
+
+
 
 		# functions are stored in these dictionaries so that other sites can be scraped in the future in conjunction
 		# with these sites if a new function is written for them.
@@ -66,6 +73,9 @@ class CovidDisplay(object):
 			header, count = thing.text.strip().split(':')
 			count = int(count.replace(',', ''))
 			self.columns_dict[column][header] = count
+
+
+
 
 	def read(self, interval=5):
 		"""
