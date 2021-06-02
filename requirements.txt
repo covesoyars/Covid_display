@@ -5,7 +5,7 @@ chardet==3.0.4
 idna==2.9
 requests==2.23.0
 soupsieve==2.0
-urllib3==1.25.8
+urllib3==1.26.5
 Adafruit-Blinka==4.1.0
 adafruit-circuitpython-74hc595==1.0.4
 adafruit-circuitpython-busdevice==4.2.1
@@ -24,7 +24,7 @@ pyusb==1.0.2
 requests==2.23.0
 soupsieve==2.0
 sysv-ipc==1.0.1
-urllib3==1.25.8
+urllib3==1.26.5
 Adafruit-Blinka==4.1.0
 adafruit-circuitpython-74hc595==1.0.4
 adafruit-circuitpython-busdevice==4.2.1
@@ -43,7 +43,7 @@ pyusb==1.0.2
 requests==2.23.0
 soupsieve==2.0
 sysv-ipc==1.0.1
-urllib3==1.25.8
+urllib3==1.26.5
 Adafruit-Blinka==4.1.0
 adafruit-circuitpython-74hc595==1.0.4
 adafruit-circuitpython-busdevice==4.2.1
@@ -62,4 +62,4 @@ pyusb==1.0.2
 requests==2.23.0
 soupsieve==2.0
 sysv-ipc==1.0.1
-urllib3==1.25.8
+urllib3==1.26.5
